@@ -19,8 +19,6 @@ class CreateOrderDetailsTable extends Migration
             $table->string('product_id');
             $table->string('quantity');
             $table->string('total_prize');
-            $table->string('');
-            $table->string('quantity');
             $table->string('status');
             $table->timestamps();
         });
