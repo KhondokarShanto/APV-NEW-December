@@ -44,7 +44,7 @@ class AuthController extends Controller
         'user_name'     => trim($request->input('user_name')),
         'phone_no'      => trim($request->input('phone_no')),
         'email'         => strtolower(trim($request->input('email'))),
-        'type'          => trim($request->input('type')),
+        'type'          => 1,
         'nid'           => trim($request->input('nid')),
         'birth_date'    => trim($request->input('birth_date')),
         'address'       => trim($request->input('address')),
@@ -70,18 +70,14 @@ class AuthController extends Controller
         ]);
       }
 
-      session()->flash('message','Registration successfull');
-      return redirect('/login');
-
-      // if(auth()->user()->type=='admin'){
-      //
-      //   return redirect()->back();
-      //
-      // }else{
-      //
-      //   session()->flash('message','Registration successfull');
-      //   return redirect('/login');
-      // }
+      if(auth()){
+      
+        return redirect()->back();
+      
+      }elseif(guest()){
+      
+        return redirect('/login');
+      }
     }
 
 

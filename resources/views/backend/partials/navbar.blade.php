@@ -1,5 +1,5 @@
 <div class="navbar-header">
-    <a class="navbar-brand" href="{{ url('') }}">APVMD</a>
+    <a class="navbar-brand fa fa-home fa-fw" href="{{ url('/') }}">Deshi</a>
 </div>
 
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -8,10 +8,6 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
 </button>
-
-<ul class="nav navbar-nav navbar-left navbar-top-links">
-    <li><a href="{{ url('/home') }}"><i class="fa fa-home fa-fw"></i> Website</a></li>
-</ul>
 
 <ul class="nav navbar-right navbar-top-links">
     <li class="dropdown navbar-inverse">

@@ -18,6 +18,9 @@
 
             @if (auth()->user()->type=='admin')
                 <li>
+                    <a href="{{ url('/show/category') }}"><i class="fa fa-table fa-fw"></i> Products Category</a>
+                </li>
+                <li>
                     <a href="{{ url('/show/product') }}"><i class="fa fa-table fa-fw"></i> Products </a>
                 </li>
                 <li>
@@ -42,11 +45,12 @@
                     <a href="{{ url('/show/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('role_index') }}"><i class="fas fa-fw fa-folder"></i><span>Roles</span></a>
+                    <a href="{{ route('role_index') }}"><i class="fas fa-fw fa-folder"></i>Roles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('show.user') }}"><i class="fas fa-fw fa-folder"></i><span>User</span></a>
+                    <a href="{{ route('show.user') }}"><i class="fas fa-fw fa-folder"></i>User</a>
                 </li>
+
             @elseif (auth()->user()->type=='supplier')
                 <li>
                     <a href="{{ url('/show/product') }}"><i class="fa fa-table fa-fw"></i> Products </a>

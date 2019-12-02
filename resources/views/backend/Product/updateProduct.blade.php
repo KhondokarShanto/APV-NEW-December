@@ -6,12 +6,16 @@
     {{_('Choose Your Product')}}
   </div>
 
-    <form id="product" action="{{ route('productUpdate', $edit->id) }}" method="POST">
+    <form id="product" action="{{ route('productUpdate', $edit->id) }}" method="POST" enctype="multipart/form-data">
       @csrf
       @method('PATCH')
     <div>
       <label for="name"><b>Name</b></label>
       <input type="text" name="name"value="{{$edit->name}}" placeholder="Enter Name" required>
+    </div>
+    <div class="form-group">    
+      <label for="image">Image:</label>
+      <input class="form-control" id="image" type="file" name="product_pic" placeholder=" Image" />
     </div>
     <div>
       <label for="email"><b>Email</b></label>
@@ -28,8 +32,6 @@
     <div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-
-
   </form>
       </div>
 @endsection

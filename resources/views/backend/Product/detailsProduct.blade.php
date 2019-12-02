@@ -10,7 +10,7 @@
 	        <div class="card card-user">
 	          <div class="content">
 	            <div class="author" style="margin-top: 20px; margin-left:50px; text-align:center;">
-	              <img class="avatar border-white" src="" alt="..."/ style="height: 200px; width: 450px;">
+	              	<img class="avatar border-white" src="{{ url('/uploads/image', $product->image) }}" alt="..."/ style="height: 200px; width: 450px;">
 	            </div>
 	          </div>
 	        </div>
@@ -106,11 +106,26 @@
 	        </div>
 
         	<div class="modal-body">
-          		<form action="{{ route('update.product',[$product->id])}}" method="post" role="form" >
+          		<form action="{{ route('update.product',[$product->id])}}" method="post" role="form" enctype="multipart/form-data">
             	@csrf 
 		            <div class="form-group">    
 		            	<label for="name">Name:</label>
 		                <input class="form-control" id="name" type="text" name="name" placeholder=" Name" value="{{$product->name}}"/>
+		            </div>
+
+		            <div class="form-group">    
+		                <label for="image">Image:</label>
+		            	<input class="form-control" id="image" type="file" name="product_pic" placeholder=" Image" />
+		            </div>
+
+		            <div class="form-group">
+		                <label for="name">Category</label>
+		                <select class="form-control" id="category" name="category" >
+		                  @foreach( $categories as $category)
+		                  <option value="{{ $category->id}}">
+		                    {{ $category->name}}</option>
+		                  @endforeach
+		                </select>
 		            </div>
 
 		            <div class="form-group">    

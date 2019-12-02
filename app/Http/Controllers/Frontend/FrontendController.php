@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Role;
+use App\Models\Product;
 
 class FrontendController extends Controller
 {
     public function showHome()
     {
-        return view('frontend.home');
+        $products = Product::where('status','active')->get();
+        return view('frontend.home',compact('products'));
     }
 
     public function showLogin()
