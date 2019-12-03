@@ -3,7 +3,7 @@
           <div class="ps-container">
             <div class="header__left">
               <div class="menu--product-categories">
-                <div class="menu__toggle"><i class="icon-menu"></i><span> Shop by Department</span></div>
+                <div class="menu__toggle"><i class="icon-menu"></i><span> Product Categories</span></div>
                 <div class="menu__content">
                   <ul class="menu--dropdown">
                     <li><a href="#"><i class="icon-star"></i> Hot Promotions</a>
@@ -100,7 +100,7 @@
           <div class="ps-container">
             <div class="navigation__left">
               <div class="menu--product-categories">
-                <div class="menu__toggle"><i class="icon-menu"></i><span> Shop by Department</span></div>
+                <div class="menu__toggle"><i class="icon-menu"></i><span> Product Categories</span></div>
                 <div class="menu__content">
                   <ul class="menu--dropdown">
                     <li><a href="#"><i class="icon-star"></i> Hot Promotions</a>
@@ -153,10 +153,6 @@
             <div class="navigation__right">
               <ul class="menu">
                 <li class="current-menu-item menu-item-has-children"><a href="index.html">Home</a><span class="sub-toggle"></span>
-                  <ul class="sub-menu">
-                    <li><a href="index.html">Marketplace Full Width</a>
-                    </li>
-                  </ul>
                 </li>
                 <li class="menu-item-has-children has-mega-menu"><a href="shop-default.html">Shop</a><span class="sub-toggle"></span>
                   <div class="mega-menu">
@@ -202,7 +198,7 @@
                     <div class="mega-menu__column">
                       <h4>Vendor Pages<span class="sub-toggle"></span></h4>
                       <ul class="mega-menu__list">
-                        <li><a href="become-a-vendor.html">Become a Vendor</a>
+                        <li><a href="{{ url('registration')}}">Become a Vendor</a>
                         </li>
                       </ul>
                     </div>
@@ -236,24 +232,7 @@
 
 
               <ul class="navigation__extra">
-                <li><a href="#">Sell on Martfury</a></li>
-                <li><a href="#">Tract your order</a></li>
-                <li>
-                  <div class="ps-dropdown"><a href="#">US Dollar</a>
-                    <ul class="ps-dropdown-menu">
-                      <li><a href="#">Us Dollar</a></li>
-                      <li><a href="#">Euro</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">English</a>
-                    <ul class="ps-dropdown-menu">
-                      <li><a href="#"><img src="img/flag/germany.png" alt=""> Germany</a></li>
-                      <li><a href="#"><img src="img/flag/fr.png" alt=""> France</a></li>
-                    </ul>
-                  </div>
-                </li>
+                <li><a href="{{ url('registration')}}">Become a Vendor</a></li>
               </ul>
             </div>
           </div>
@@ -262,28 +241,11 @@
       <header class="header header--mobile" data-sticky="true">
         <div class="header__top">
           <div class="header__left">
-            <p>Welcome to Martfury Online Shopping Store !</p>
+            <p>Welcome to APV Online Shopping Store !</p>
           </div>
           <div class="header__right">
             <ul class="navigation__extra">
-              <li><a href="#">Sell on Martfury</a></li>
-              <li><a href="#">Tract your order</a></li>
-              <li>
-                <div class="ps-dropdown"><a href="#">US Dollar</a>
-                  <ul class="ps-dropdown-menu">
-                    <li><a href="#">Us Dollar</a></li>
-                    <li><a href="#">Euro</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">English</a>
-                  <ul class="ps-dropdown-menu">
-                    <li><a href="#"><img src="img/flag/germany.png" alt=""> Germany</a></li>
-                    <li><a href="#"><img src="img/flag/fr.png" alt=""> France</a></li>
-                  </ul>
-                </div>
-              </li>
+              <li><a href="{{ url('registration')}}">Become a Vendor</a></li>
             </ul>
           </div>
         </div>
@@ -321,7 +283,7 @@
           </div>
         </div>
         <div class="ps-search--mobile">
-          <form class="ps-form--search-mobile" action="http://nouthemes.net/html/martfury/index.html" method="get">
+          <form class="ps-form--search-mobile" action="http://nouthemes.net/html/APV/index.html" method="get">
             <div class="form-group--nest">
               <input class="form-control" type="text" placeholder="Search something...">
               <button><i class="icon-magnifier"></i></button>
@@ -407,7 +369,7 @@
       </div>
       <div class="ps-panel--sidebar" id="search-sidebar">
         <div class="ps-panel__header">
-          <form class="ps-form--search-mobile" action="http://nouthemes.net/html/martfury/index.html" method="get">
+          <form class="ps-form--search-mobile" action="http://nouthemes.net/html/APV/index.html" method="get">
             <div class="form-group--nest">
               <input class="form-control" type="text" placeholder="Search something...">
               <button><i class="icon-magnifier"></i></button>
