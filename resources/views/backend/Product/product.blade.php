@@ -9,11 +9,11 @@
   <h2>All Products</h2>
 
   @if(auth()->user()->type=='admin')
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
       Create Products
-    </button>
+    </button> -->
   @endif
-  
+
   </br></br> 
 
   <table class="table table-bordered" id="datatable">
@@ -61,28 +61,28 @@
 
         <div class="modal-body">
           <form action="{{ route('store.product')}}" method="post" role="form" >
-            @csrf 
-              <div class="form-group">    
+            @csrf
+              <div class="form-group">
                 <label for="name">Name:</label>
                 <input class="form-control" id="name" type="text" name="name" placeholder=" Name" />
               </div>
 
-              <div class="form-group">    
+              <div class="form-group">
                 <label for="name">Price:</label>
                 <input class="form-control" id="price" type="text" name="price" placeholder="Price" />
               </div>
 
-              <div class="form-group">    
+              <div class="form-group">
                 <label for="name">Description:</label>
                 <input class="form-control" id="description" type="text" name="description" placeholder="Description" />
               </div>
 
-              <div class="form-group">    
+              <div class="form-group">
                 <label for="name">Quantity:</label>
                 <input class="form-control" id="quantity" type="text" name="quantity" placeholder="Quantity" />
               </div>
 
-              <div class="form-group">    
+              <div class="form-group">
                 <label for="name">Brand:</label>
                 <input class="form-control" id="brand" type="text" name="brand" placeholder="Brand" />
               </div>
