@@ -60,7 +60,7 @@
         </div>
 
         <div class="modal-body">
-          <form action="{{ route('store.product')}}" method="post" role="form" >
+          <form action="{{ route('store.product')}}" method="post" role="form" enctype="multipart/form-data" >
             @csrf
               <div class="form-group">
                 <label for="name">Name:</label>
@@ -78,6 +78,12 @@
               </div>
 
               <div class="form-group">
+                <label for="name">Picture:</label>
+                <input class="form-control" id="image" type="file" name="image"  />
+              </div>
+
+
+              <div class="form-group">
                 <label for="name">Quantity:</label>
                 <input class="form-control" id="quantity" type="text" name="quantity" placeholder="Quantity" />
               </div>
@@ -92,7 +98,7 @@
                 <select class="form-control" id="supplier" name="supplier" >
                   <option value="outCollection">Out Collection</option>
                   @foreach( $suppliers as $supplier)
-                  <option value="{{ $supplier->user_id}}">
+                  <option value="{{ $supplier->id}}">
                     {{ $supplier->user_name}}</option>
                   @endforeach
                 </select>

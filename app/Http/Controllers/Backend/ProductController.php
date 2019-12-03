@@ -39,8 +39,10 @@ class ProductController extends Controller
       'description' =>$request->description,
       'quantity'    =>$request->quantity,
       'brand'       =>$request->brand,
-      'status'      =>$request->status,
+      'status'      =>'pending',
       'supplier_id'      =>$request->supplier,
+      'image'      =>trim($request->file('image')->store('public/product'),'public/'),
+
     ]);
 
     return back();
