@@ -48,6 +48,7 @@ class SupplierController extends Controller
       'description' =>$request->description,
       'quantity'    =>$request->quantity,
       'brand'       =>$request->brand,
+      'image'         =>trim($request->file('image')->store('public/product'),'public/'),
     ]);
 
     return redirect()->back();

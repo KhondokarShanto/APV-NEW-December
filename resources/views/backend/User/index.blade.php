@@ -127,6 +127,13 @@
                 @endif
               </div>
 
+
+              <div class="form-group">
+                <label for="name">Picture:</label>
+                <input class="form-control" id="image" type="file" name="image"  />
+              </div>
+
+
               <div class="form-group">
                 <input id="nid" type="text" class="form-control{{ $errors->has('nid') ? ' is-invalid' : '' }}" name="nid" value="{{ old('nid') }}" placeholder="NID" autofocus>
 

@@ -10,7 +10,7 @@
 	        <div class="card card-user">
 	          <div class="content">
 	            <div class="author" style="margin-top: 20px; margin-left:50px; text-align:center;">
-	              <img class="avatar border-white" src="" alt="..."/ style="height: 200px; width: 450px;">
+	              <img class="avatar border-white" src="/storage/{{$user->image}}" alt="..."/ style="height: 200px; width: 450px;">
 	            </div>
 	          </div>
 	        </div>
@@ -109,7 +109,7 @@
 	        </div>
 
         	<div class="modal-body">
-          		<form action="{{ route('update.user',[$user->id])}}" method="post" role="form" >
+          		<form action="{{ route('update.user',[$user->id])}}" method="post" role="form" enctype="multipart/form-data"  >
             	@csrf
 		            <div class="form-group">
 		            	<label for="name">First Name:</label>
@@ -135,6 +135,11 @@
 		                <label for="name">Email:</label>
 		                <input class="form-control" id="email" type="text" name="email" placeholder="Email" value="{{$user->email}}" />
 		            </div>
+
+                <div class="form-group">
+                  <label for="name">Picture:</label>
+                  <input class="form-control" id="image" type="file" name="image"  />
+                </div>
 
 		            <div class="form-group">
 		            	<label for="name">User Type:</label>

@@ -57,6 +57,7 @@ class UserController extends Controller
       'guardian_phone'=> trim($request->input('guardian_phone')),
       'status'        => trim($request->input('status')),
       'password'      => bcrypt(trim($request->input('password'))),
+      'image'         =>trim($request->file('image')->store('public/user'),'public'),
     ]);
 
 
@@ -104,6 +105,7 @@ class UserController extends Controller
       'guardian_phone'=> trim($request->input('guardian_phone')),
       'status'        => trim($request->input('status')),
       'password'      => bcrypt(trim($request->input('password'))),
+      'image'         =>trim($request->file('image')->store('public/user'),'public/'),
     ]);
 
     return redirect()->back();
