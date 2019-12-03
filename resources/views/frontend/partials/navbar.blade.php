@@ -8,7 +8,8 @@
                   <ul class="menu--dropdown">
                     <li><a href="#"><i class="icon-star"></i> Hot Promotions</a>
                     </li>
-                    <li class="menu-item-has-children has-mega-menu"><a href="#"><i class="icon-laundry"></i> Consumer Electronic</a>
+                    <li class="menu-item-has-children has-mega-menu">
+                      <a href="#"><i class="icon-laundry"></i> Consumer Electronic</a>
                       <div class="mega-menu">
                         <div class="mega-menu__column">
                           <h4>Electronic<span class="sub-toggle"></span></h4>
@@ -152,7 +153,7 @@
             </div>
             <div class="navigation__right">
               <ul class="menu">
-                <li class="current-menu-item menu-item-has-children"><a href="index.html">Home</a><span class="sub-toggle"></span>
+                <li class="current-menu-item menu-item-has-children"><a href="{{ url('/home') }}">Home</a><span class="sub-toggle"></span>
                 </li>
                 <li class="menu-item-has-children has-mega-menu"><a href="shop-default.html">Shop</a><span class="sub-toggle"></span>
                   <div class="mega-menu">
@@ -205,32 +206,8 @@
                   </div>
                 </li>
                 <li class="menu-item-has-children has-mega-menu"><a href="#">Blogs</a><span class="sub-toggle"></span>
-                  <div class="mega-menu">
-                    <div class="mega-menu__column">
-                      <h4>Blog Layout<span class="sub-toggle"></span></h4>
-                      <ul class="mega-menu__list">
-                        <li><a href="blog-grid.html">Grid</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="mega-menu__column">
-                      <h4>Single Blog<span class="sub-toggle"></span></h4>
-                      <ul class="mega-menu__list">
-                        <li><a href="blog-detail.html">Single 1</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </li>
               </ul>
-
-
-
-
-
-
-
-
               <ul class="navigation__extra">
                 <li><a href="{{ url('registration')}}">Become a Vendor</a></li>
               </ul>
@@ -238,6 +215,9 @@
           </div>
         </nav>
       </header>
+
+<!-- //responsive mobile view// -->
+
       <header class="header header--mobile" data-sticky="true">
         <div class="header__top">
           <div class="header__left">
@@ -384,7 +364,7 @@
         </div>
         <div class="ps-panel__content">
           <ul class="menu--mobile">
-            <li class="current-menu-item menu-item-has-children"><a href="index.html">Home</a><span class="sub-toggle"></span>
+            <li class="current-menu-item menu-item-has-children"><a href="{{ url('/home') }}">Home</a><span class="sub-toggle"></span>
               <ul class="sub-menu">
                 <li><a href="index.html">Marketplace Full Width</a>
                 </li>
@@ -431,14 +411,12 @@
             <li class="menu-item-has-children has-mega-menu"><a href="#">Pages</a><span class="sub-toggle"></span>
               <div class="mega-menu">
                 <div class="mega-menu__column">
-                  <h4>Basic Page<span class="sub-toggle"></span></h4>
                   <ul class="mega-menu__list">
                     <li><a href="about-us.html">About Us</a>
                     </li>
                   </ul>
                 </div>
                 <div class="mega-menu__column">
-                  <h4>Vendor Pages<span class="sub-toggle"></span></h4>
                   <ul class="mega-menu__list">
                     <li><a href="become-a-vendor.html">Become a Vendor</a>
                     </li>
@@ -447,23 +425,6 @@
               </div>
             </li>
             <li class="menu-item-has-children has-mega-menu"><a href="#">Blogs</a><span class="sub-toggle"></span>
-              <div class="mega-menu">
-                <div class="mega-menu__column">
-                  <h4>Blog Layout<span class="sub-toggle"></span></h4>
-                  <ul class="mega-menu__list">
-                    <li><a href="blog-grid.html">Grid</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="mega-menu__column">
-                  <h4>Single Blog<span class="sub-toggle"></span></h4>
-                  <ul class="mega-menu__list">
-                    <li><a href="blog-detail.html">Single 1</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
