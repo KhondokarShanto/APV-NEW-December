@@ -42,18 +42,21 @@
                     <a href="{{ url('/show/area') }}"><i class="fa fa-table fa-fw"></i> Area</a>
                 </li>
                 <li>
-                    <a href="{{ url('/show/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
+                    <a href="{{ url('/show/order') }}"><i class="fa fa-table fa-fw"></i> Order</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('role_index') }}"><i class="fas fa-fw fa-folder"></i>Roles</a>
+                    <a href="{{ route('role_index') }}"><i class="fa fa-table fa-fw"></i>Roles</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('show.user') }}"><i class="fas fa-fw fa-folder"></i>User</a>
+                    <a href="{{ route('show.user') }}"><i class="fa fa-table fa-fw"></i>User</a>
                 </li>
 
             @elseif (auth()->user()->type=='supplier')
                 <li>
-                    <a href="{{ url('/show/product') }}"><i class="fa fa-table fa-fw"></i> Products </a>
+                    <a href="{{ url('/show/product') }}"><i class="fa fa-table fa-fw"></i> All Products </a>
+                </li>
+                <li>
+                    <a href="{{ url('/show/own/product') }}"><i class="fa fa-table fa-fw"></i> Own Products </a>
                 </li>
                 <li>
                     <a href="{{ url('show/requisition/') }}"><i class="fa fa-table fa-fw"></i> Requisition</a>
@@ -68,7 +71,7 @@
                 <li>
                     <a href="{{ url('/show/order') }}"><i class="fa fa-edit fa-fw"></i> Order</a>
                 </li>
-            @elseif(auth()->user()->type=='marchandiser')
+            @elseif(auth()->user()->type=='merchandiser')
                 <li>
                     <a href="{{ url('/show/product') }}"><i class="fa fa-table fa-fw"></i> Products </a>
                 </li>

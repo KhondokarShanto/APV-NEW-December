@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Merchandiser extends Model
 {
-        protected $guarded=[];
+    protected $guarded=[];
 }

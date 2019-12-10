@@ -7,17 +7,12 @@
           <p>Call us 24/7</p>
           <h3>1800 97 97 69</h3>
           <p>502 New Design Str, Melbourne, Australia <br><a href="http://nouthemes.net/cdn-cgi/l/email-protection#74171b1a0015170034191506001201060d5a171b"><span class="__cf_email__" data-cfemail="bcdfd3d2c8dddfc8fcd1ddcec8dac9cec592dfd3">[email&#160;protected]</span></a></p>
-          <ul class="ps-list--social">
-            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-          </ul>
         </div>
       </aside>
       <aside class="widget widget_footer">
         <h4 class="widget-title">Quick links</h4>
         <ul class="ps-list--link">
+          <li><a href="#">Policy</a></li>
           <li><a href="#">Policy</a></li>
         </ul>
       </aside>
@@ -33,8 +28,6 @@
         <ul class="ps-list--link">
           <li><a href="#">Our Press</a></li>
           <li><a href="checkout.html">Checkout</a></li>
-          <li><a href="my-account.html">My account</a></li>
-          <li><a href="shop-default.html">Shop</a></li>
         </ul>
       </aside>
     </div>

@@ -16,7 +16,6 @@
       <tr>
         <th scope="col">Sl.</th>
         <th scope="col">Name</th>
-        <th scope="col">Email</th>
         <th scope="col">Phone</th>
         <th scope="col">Status</th>
         <th scope="col">Actions</th>
@@ -27,7 +26,6 @@
       <tr>
         <td>{{$supplier->id}}</td>
         <td>{{$supplier->user_name}}</td>
-        <td>{{$supplier->email}}</td>
         <td>{{$supplier->phone_no}}</td>
         @if($supplier->status=='pending')
         <td>
@@ -48,7 +46,7 @@
           </a>
           <b>
           </b>
-          <a href="{{ route('delete.supplier',[$supplier->id])}}"class="btn btn-danger">
+          <a href="{{ route('delete.user',[$supplier->id])}}"class="btn btn-danger">
             Delete
           </a>
         </td>

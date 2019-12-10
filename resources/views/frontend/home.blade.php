@@ -16,7 +16,7 @@
       <div class="ps-product-list ps-clothings">
         <div class="ps-container">
           <div class="ps-section__header">
-            <h3>Consumer Electronics</h3>
+            <h3>All Products</h3>
             <ul class="ps-section__links">
               <li><a href="shop-grid.html">New Arrivals</a></li>
               <li><a href="shop-grid.html">View All</a></li>
@@ -24,30 +24,21 @@
           </div>
           <div class="ps-section__content">
             <div class="ps-carousel--nav owl-slider" data-owl-auto="false" data-owl-loop="false" data-owl-speed="10000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="true" data-owl-item="7" data-owl-item-xs="2" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-item-xl="6" data-owl-duration="1000" data-owl-mousedrag="on">
+              @foreach($products as $product)
               <div class="ps-product">
-                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/1.jpg" alt=""/></a>
-                  <div class="ps-product__badge">-16%</div>
-                  <ul class="ps-product__actions">
-                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="ps-product">
-                <div class="ps-product__thumbnail"><a href="{{ route('check')}}"><img src="img/products/electronic/2.jpg" alt=""/></a>
-                  <div class="ps-product__badge hot">hot</div>
-                  <ul class="ps-product__actions">
-                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="ps-product">
-                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/electronic/3.jpg" alt=""/></a>
+                <div class="ps-product__thumbnail">
+                  <a href="{{ url('/product', [$product->id])}}">
+                    <img src="{{ url('/uploads/image', $product->image) }}" alt=""/>
+                  </a>
                   <div class="ps-product__badge">-25%</div>
                   <ul class="ps-product__actions">
-                    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>
+                    <li>
+                      <a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a>
+                    </li>
                   </ul>
                 </div>
               </div>
+              @endforeach
             </div>
           </div>
         </div>
@@ -69,7 +60,9 @@
             <div class="ps-carousel--responsive owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="10000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="7" data-owl-item-xs="2" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-item-xl="6" data-owl-duration="1000" data-owl-mousedrag="on">
               @foreach($products as $product)
               <div class="ps-product">
-                <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/home/1.jpg" alt=""/>Hello</a>
+                <div class="ps-product__thumbnail">
+                  <a href="product-default.html">
+                    <img src="{{ url('/uploads/image', $product->image) }}" alt=""/>Hello</a>
                   <div class="ps-product__badge">-16%</div>
                   <ul class="ps-product__actions">
                     <li><a href="#" data-toggle="tooltip" data-placement="top" title="Read More"><i class="icon-bag2"></i></a></li>

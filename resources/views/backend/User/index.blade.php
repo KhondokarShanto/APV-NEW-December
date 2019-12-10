@@ -16,18 +16,18 @@
   </br></br>
 
   <table class="table table-bordered" id="datatable">
-  <thead>
-    <tr>
-      <th scope="col">Sl.</th>
-      <th scope="col">Name</th>
-      <th scope="col">Type</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Status</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach($users as $user)
+    <thead>
+      <tr>
+        <th scope="col">Sl.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($users as $user)
         <tr>
           <td>{{$user->id}}</td>
           <td>{{$user->user_name}}</td>
@@ -59,8 +59,8 @@
           </td>
         </tr>
         @endforeach
-  </tbody>
-</table>
+    </tbody>
+  </table>
 </div>
 
 
@@ -75,7 +75,7 @@
         </div>
 
         <div class="modal-body">
-          <form action="{{ route('registration')}}" method="post" role="form" >
+          <form action="{{ route('registration')}}" method="post" role="form" enctype="multipart/form-data">
             @csrf
               <div class="form-group">
                 <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}"  placeholder="First Name" autofocus>
@@ -118,7 +118,7 @@
               </div>
 
               <div class="form-group">
-                <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  placeholder="Email" autofocus>
+                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  placeholder="Email" autofocus>
 
                 @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
@@ -138,7 +138,7 @@
               </div>
 
               <div class="form-group">
-                <input id="birth_date" type="text" class="form-control{{ $errors->has('birth_date') ? ' is-invalid' : '' }}" name="birth_date" value="{{ old('birth_date') }}"  placeholder="Birth Date" autofocus>
+                <input id="birth_date" type="date" class="form-control{{ $errors->has('birth_date') ? ' is-invalid' : '' }}" name="birth_date" value="{{ old('birth_date') }}"  placeholder="Birth Date" autofocus>
 
                 @if ($errors->has('birth_date'))
                 <span class="invalid-feedback" role="alert">
@@ -177,7 +177,7 @@
               </div>
 
               <div class="form-group">
-                <input id="password" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ old('password') }}" placeholder="Password" autofocus>
+                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ old('password') }}" placeholder="Password" autofocus>
 
                 @if ($errors->has('password'))
                 <span class="invalid-feedback" role="alert">
@@ -191,11 +191,15 @@
               </div>
 
               <div class="form-group">
+                <input class="form-control" id="image" type="file" name="product_pic" placeholder=" Image" />
+              </div>
+
+              <div class="form-group">
                 <select class="form-control" id="type" name="type" >
                   <option value="">Select User Type</option>
 
                   @foreach( $roles as $role)
-                  <option value="Supplier">
+                  <option value="{{ $role->name}}">
                     {{ $role->name}}
                   </option>
                   @endforeach

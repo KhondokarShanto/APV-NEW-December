@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\User;
+use App\Models\Product;
 
 class TaskController extends Controller
 {
@@ -13,18 +14,18 @@ class TaskController extends Controller
     return view ('frontpage.productpage.index');
   }*/
 
-  // public function index(){
-  //
-  //   $products = Product::where('status','active')->get();
-  //   $suppliers= User::where('type','supplier')->get();
-  //   return view('backend.product',compact('products','suppliers'));
-  // }
-  //
-  // public function details($id){
-  //
-  //   $product= Product::with('supplier')->find($id);
-  //   return view('backend.detailsProduct', compact('product'));
-  // }
+  public function index(){
+  
+    $tasks = Task::get();
+    $distributor= User::where('type','distributor')->get();
+    return view('backend.Task.task',compact('tasks','distributor'));
+  }
+  
+  public function details($id){
+  
+    $product= Product::with('supplier')->find($id);
+    return view('backend.detailsProduct', compact('product'));
+  }
 
 
   public function create(){

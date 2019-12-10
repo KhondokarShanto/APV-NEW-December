@@ -4,7 +4,22 @@
   <div class="ps-page--my-account">
     <div class="ps-my-account">
       <div class="container">
-        <form method="POST" action="{{ route('registration') }}">
+        @foreach ($errors->all() as $error)
+          <p class="alert alert-danger">{{ $error }}</p>
+        @endforeach
+        @if (session('status'))
+          <div class="alert alert-success alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+              {{ session('status')}}
+          </div>
+        @endif
+        @if (session('message'))
+          <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+              {{ session('message')}}
+          </div>
+        @endif
+        <form method="POST" action="{{ route('registration') }}" enctype="multipart/form-data">
           @csrf
           <div class="ps-tabs">
             <div class="ps-tab active" id="sign-in">
@@ -15,7 +30,6 @@
                 <div class="form-group row">
                   <div class="col-md-6">
                       <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}"  placeholder="First Name" autofocus>
-
                       @if ($errors->has('first_name'))
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $errors->first('first_name') }}</strong>
@@ -56,7 +70,7 @@
 
                 <div class="form-group row">
                   <div class="col-md-6">
-                      <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  placeholder="Email" autofocus>
+                      <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  placeholder="Email" autofocus>
 
                       @if ($errors->has('email'))
                       <span class="invalid-feedback" role="alert">
@@ -77,7 +91,7 @@
 
                 <div class="form-group row">
                   <div class="col-md-6">
-                      <input id="birth_date" type="text" class="form-control{{ $errors->has('birth_date') ? ' is-invalid' : '' }}" name="birth_date" value="{{ old('birth_date') }}"  placeholder="Birth Date" autofocus>
+                      <input id="birth_date" type="date" class="form-control{{ $errors->has('birth_date') ? ' is-invalid' : '' }}" name="birth_date" value="{{ old('birth_date') }}"  placeholder="Birth Date" autofocus>
 
                       @if ($errors->has('birth_date'))
                       <span class="invalid-feedback" role="alert">
@@ -119,26 +133,29 @@
 
                 <div class="form-group row">
                   <div class="col-md-6">
-                      <input id="password" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ old('password') }}" placeholder="Password" autofocus>
+                      <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ old('password') }}" placeholder="Password" autofocus>
 
                       @if ($errors->has('password'))
                       <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('password') }}</strong>
+                        <strong>{{ $errors->first('password') }}</strong>
                       </span>
                       @endif
                   </div>
                   <div class="col-md-6">
-                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                     <select class="form-control" id="type" name="type" >
                       <option value="">Select User Type</option>
                       @foreach( $roles as $role)
                       <option value="{{ $role->name}}">{{ $role->name}}</option>
                       @endforeach
                     </select>
+                  </div>
+                  <div class="col-md-6">
+                    <input class="form-control" id="image" type="file" name="profile_pic" placeholder=" Image" />
                   </div>
                 </div>
                 <div class="form-group submtit">

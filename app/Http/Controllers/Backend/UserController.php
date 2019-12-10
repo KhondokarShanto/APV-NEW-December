@@ -10,12 +10,14 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+
   public function index(){
 
-    $users = User::all();
+    $users = User::get();
     $roles = Role::all();
     return view('backend.User.index',compact('users','roles'));
   }
+
 
   public function details($id){
 
@@ -24,9 +26,6 @@ class UserController extends Controller
     return view('backend.User.details', compact('user','roles'));
   }
 
-  public function create(){
-
-  }
 
   public function store(Request $request){
 
@@ -60,30 +59,7 @@ class UserController extends Controller
       'password'      => bcrypt(trim($request->input('password'))),
     ]);
 
-
-    if($user->type=='supplier'){
-      Supplier::create([
-        'user_id'=>$user->id,
-      ]);
-
-    }elseif($user->type=='distributor'){
-      Distributor::create([
-        'user_id'=>$user->id,
-      ]);
-
-    }elseif($user->type=='marchandisar'){
-      Marchandisar::create([
-        'user_id'=>$user->id,
-      ]);
-    }
-
     return redirect()->back();
-  }
-
-
-  public function edit($id){
-
-
   }
 
 

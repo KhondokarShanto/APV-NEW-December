@@ -10,7 +10,7 @@
 	        <div class="card card-user">
 	          <div class="content">
 	            <div class="author" style="margin-top: 20px; margin-left:50px; text-align:center;">
-	              <img class="avatar border-white" src="" alt="..."/ style="height: 200px; width: 450px;">
+	              	<img class="avatar border-white" src="{{ url('/uploads/image', $product->image) }}" alt="..."/ style="height: 200px; width: 450px;">
 	            </div>
 	          </div>
 	        </div>
@@ -73,23 +73,21 @@
 	            </thead>
 	            <tbody style="color: #3390ff; text-decoration: bold;">
 	              <tr>
-	              	<td class="col-md-6">{{$product->name}}</td>
+	              	<td class="col-md-6">{{$product->supplier->user_name}}</td>
 	                <td class="col-md-6">{{$product->description}}</td>
 	              </tr>
 	            </tbody>
           	</table>
           	<div class="text-center" style="margin-bottom: 10px; ">
-          		<a href="{{ route('show.product')}}">
+          		<a href="{{ route('show.requisition')}}">
           			<button type="button" class="btn btn-success">
 				      Back
 				    </button>
           		</a>
           		<b></b>
-		        @if (auth()->user()->type=='admin')
 		        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-			      Update Products
+			    	Update Products
 			    </button>
-		        @endif
 		    </div>
       	</div>
     </div>
@@ -106,11 +104,26 @@
 	        </div>
 
         	<div class="modal-body">
-          		<form action="{{ route('update.product',[$product->id])}}" method="post" role="form" >
+          		<form action="{{ route('update.product',[$product->id])}}" method="post" role="form" enctype="multipart/form-data">
             	@csrf 
 		            <div class="form-group">    
 		            	<label for="name">Name:</label>
 		                <input class="form-control" id="name" type="text" name="name" placeholder=" Name" value="{{$product->name}}"/>
+		            </div>
+
+		            <div class="form-group">    
+		                <label for="image">Image:</label>
+		            	<input class="form-control" id="image" type="file" name="product_pic" placeholder=" Image" />
+		            </div>
+
+		            <div class="form-group">
+		                <label for="name">Category</label>
+		                <select class="form-control" id="category" name="category" >
+		                  @foreach( $categories as $category)
+		                  <option value="{{ $category->id}}">
+		                    {{ $category->name}}</option>
+		                  @endforeach
+		                </select>
 		            </div>
 
 		            <div class="form-group">    
@@ -133,6 +146,7 @@
 		                <input class="form-control" id="brand" type="text" name="brand" placeholder="Brand" value="{{$product->brand}}" />
 		            </div>
 
+		            @if(auth()->user()->type=='admin')
 		            <div class="form-group">    
 		                <label for="name">Status:</label>
 		                <select class="form-control" id="status" name="status" >
@@ -142,8 +156,12 @@
 	                      	<option value="active">
 	                      		Active
 	                      	</option>
+	                      	<option value="pending">
+	                      		Pending
+	                      	</option>
 	                    </select>
 		            </div>
+		            @endif
 
 		            <div class="modal-footer">
 		                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

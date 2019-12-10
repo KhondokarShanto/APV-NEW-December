@@ -73,7 +73,7 @@
 	            </thead>
 	            <tbody style="color: #3390ff; text-decoration: bold;">
 	              <tr>
-	              	<td class="col-md-6">{{$product->name}}</td>
+	              	<td class="col-md-6">{{$product->supplier->user_name}}</td>
 	                <td class="col-md-6">{{$product->description}}</td>
 	              </tr>
 	            </tbody>
@@ -156,6 +156,9 @@
 	                      	</option>
 	                      	<option value="active">
 	                      		Active
+	                      	</option>
+	                      	<option value="pending">
+	                      		Pending
 	                      	</option>
 	                    </select>
 		            </div>

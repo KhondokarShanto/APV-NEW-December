@@ -10,7 +10,7 @@
 	        <div class="card card-user">
 	          <div class="content">
 	            <div class="author" style="margin-top: 20px; margin-left:50px; text-align:center;">
-	              <img class="avatar border-white" src="" alt="..."/ style="height: 200px; width: 450px;">
+	              <img class="avatar border-white" src="{{ url('/uploads/image', $user->image) }}" alt="..."/ style="height: 200px; width: 450px;">
 	            </div>
 	          </div>
 	        </div>

@@ -69,7 +69,7 @@
             <i class="fa fa-user fa-fw"></i> {{ auth()->user()->user_name}} <b class="caret"></b>
         </a>
         <ul class="dropdown-menu dropdown-user">
-            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+            <li><a href="{{ url('/details/user',[auth()->user()->id])}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
             </li>
             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
             </li>
@@ -80,4 +80,3 @@
     </li>
 </ul>
 
-<!-- /.navbar-top-links -->

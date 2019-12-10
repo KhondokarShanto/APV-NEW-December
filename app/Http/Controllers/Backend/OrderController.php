@@ -6,67 +6,49 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\User;
+use App\Models\Area;
+use App\Models\Cart;
+use App\Models\Category;
+use App\Models\OrderDetails;
 
 class OrderController extends Controller
 {
-  /*public function index(){
-
-    return view ('frontpage.productpage.index');
-  }*/
-
-  // public function index(){
-  //
-  //   $products = Product::where('status','active')->get();
-  //   $suppliers= User::where('type','supplier')->get();
-  //   return view('backend.product',compact('products','suppliers'));
-  // }
-  //
-  // public function details($id){
-  //
-  //   $product= Product::with('supplier')->find($id);
-  //   return view('backend.detailsProduct', compact('product'));
-  // }
 
 
-  public function create(){
+  public function index(){
+  
+    $orders         = Cart::with('merchandiser','distributor','area','product')->get();
+    $merchandisers  = User::where('type','merchandiser')->get();
+    $categories     = Category::all();
 
+    return view('backend.Order.order',compact('orders','merchandisers','categories'));
   }
+  
+  public function details($id){
 
-  public function store(Request $request){
-
-    Order::create([
-      'name'        =>$request->name,
-      'price'       =>$request->price,
-      'description' =>$request->description,
-      'quantity'    =>$request->quantity,
-      'brand'       =>$request->brand,
-      'status'      =>$request->status,
-    ]);
-
-    return back();
-  }
-
-  public function edit($id){
-
-    $edit= Order::find($id);
-    return view('backend.Order.updateOrder',compact('edit'));
-
+    $carts        = Cart::with('product','area','merchandiser','distributor')->where('merchandiser_id', $id)->where('status','confirm')->get();
+    $cart         = Cart::with('product','area','merchandiser','distributor')->where('merchandiser_id', $id)->where('status','confirm')->first();
+    $totalPrice   = Cart::where('merchandiser_id', $id)->sum('price');
+    $distributors = User::where('type','distributor')->get();
+//dd($distributors);
+    return view('backend.Order.detailsOrder', compact('carts','cart','totalPrice','distributors'));
   }
 
   public function update(Request $request,$id){
 
-    $data = Order::findorFail($id);
+    $orders= Cart::where('merchandiser_id',$id)->where('status','confirm')->get();
 
-    $data->update([
-      'name'        =>$request->name,
-      'price'       =>$request->price,
-      'description' =>$request->description,
-      'quantity'    =>$request->quantity,
-      'brand'       =>$request->brand,
-      'status'      =>$request->status,
-    ]);
+    foreach ($orders as $order) {
 
-    return redirect()->back();
+      $order->update([
+
+        'distributor_id'   =>$request->distributor_id,
+        'status'           =>'processing',
+
+      ]);
+    }
+
+    return back();
   }
 
   public function delete($id){

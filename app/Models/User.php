@@ -35,7 +35,12 @@ class User extends Model
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles(){
-      return $this->belongsToMany('App\Models\Role');
+    public function role(){
+      return $this->hasOne(Role::class, 'name', 'type');
+    }
+
+    public function area()
+    {
+        return $this->hasOne(Area::class, 'id', 'area_id');
     }
 }

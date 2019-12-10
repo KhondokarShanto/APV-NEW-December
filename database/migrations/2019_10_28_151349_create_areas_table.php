@@ -17,7 +17,7 @@ class CreateAreasTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('postcode');
             $table->string('name');
-            $table->string('discription');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
