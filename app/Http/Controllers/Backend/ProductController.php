@@ -80,9 +80,17 @@ class ProductController extends Controller
       'description' =>$request->description,
       'quantity'    =>$request->quantity,
       'brand'       =>$request->brand,
+<<<<<<< HEAD
       'supplier_id' =>$request->supplier,
       'status'      =>'pending',
     ]); 
+=======
+      'status'      =>'pending',
+      'supplier_id'      =>$request->supplier,
+      'image'      =>trim($request->file('image')->store('public/product'),'public/'),
+
+    ]);
+>>>>>>> bed6c03880be7a9bf9d930e2abb19ad8e1ecc22d
 
     return back();
   }

@@ -10,7 +10,11 @@
 	        <div class="card card-user">
 	          <div class="content">
 	            <div class="author" style="margin-top: 20px; margin-left:50px; text-align:center;">
+<<<<<<< HEAD
 	              	<img class="avatar border-white" src="{{ url('/uploads/image', $product->image) }}" alt="..."/ style="height: 200px; width: 450px;">
+=======
+	              <img class="avatar border-white" src="/storage/{{$product->image}}" alt="..."/ style="height: 200px; width: 450px;">
+>>>>>>> bed6c03880be7a9bf9d930e2abb19ad8e1ecc22d
 	            </div>
 	          </div>
 	        </div>
@@ -106,13 +110,20 @@
 	        </div>
 
         	<div class="modal-body">
+<<<<<<< HEAD
           		<form action="{{ route('update.product',[$product->id])}}" method="post" role="form" enctype="multipart/form-data">
             	@csrf 
 		            <div class="form-group">    
+=======
+          		<form action="{{ route('update.product',[$product->id])}}" method="post" role="form" >
+            	@csrf
+		            <div class="form-group">
+>>>>>>> bed6c03880be7a9bf9d930e2abb19ad8e1ecc22d
 		            	<label for="name">Name:</label>
 		                <input class="form-control" id="name" type="text" name="name" placeholder=" Name" value="{{$product->name}}"/>
 		            </div>
 
+<<<<<<< HEAD
 		            <div class="form-group">    
 		                <label for="image">Image:</label>
 		            	<input class="form-control" id="image" type="file" name="product_pic" placeholder=" Image" />
@@ -129,26 +140,29 @@
 		            </div>
 
 		            <div class="form-group">    
+=======
+		            <div class="form-group">
+>>>>>>> bed6c03880be7a9bf9d930e2abb19ad8e1ecc22d
 		                <label for="name">Price:</label>
 		                <input class="form-control" id="price" type="text" name="price" placeholder="Price" value="{{$product->price}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Description:</label>
 		                <input class="form-control" id="description" type="text" name="description" placeholder="Description" value="{{$product->description}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Quantity:</label>
 		                <input class="form-control" id="quantity" type="text" name="quantity" placeholder="Quantity" value="{{$product->quantity}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Brand:</label>
 		                <input class="form-control" id="brand" type="text" name="brand" placeholder="Brand" value="{{$product->brand}}" />
 		            </div>
 
-		            <div class="form-group">    
+		            <div class="form-group">
 		                <label for="name">Status:</label>
 		                <select class="form-control" id="status" name="status" >
 	                    	<option value="{{$product->status}}">

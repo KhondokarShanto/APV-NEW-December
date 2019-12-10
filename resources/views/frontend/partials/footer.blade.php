@@ -5,8 +5,24 @@
         <h4 class="widget-title">Contact us</h4>
         <div class="widget_content">
           <p>Call us 24/7</p>
+<<<<<<< HEAD
           <h3>1800 97 97 69</h3>
           <p>502 New Design Str, Melbourne, Australia <br><a href="http://nouthemes.net/cdn-cgi/l/email-protection#74171b1a0015170034191506001201060d5a171b"><span class="__cf_email__" data-cfemail="bcdfd3d2c8dddfc8fcd1ddcec8dac9cec592dfd3">[email&#160;protected]</span></a></p>
+=======
+          <h3>01521320834</h3>
+          <p>230/A East-Kafrul, Dhaka-1206<br>
+            <!-- <a href="#">
+              <span class="__cf_email__" data-cfemail="bcdfd3d2c8dddfc8fcd1ddcec8dac9cec592dfd3">[email&#160;protected]
+              </span>
+            </a> -->
+          </p>
+          <ul class="ps-list--social">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+>>>>>>> bed6c03880be7a9bf9d930e2abb19ad8e1ecc22d
         </div>
       </aside>
       <aside class="widget widget_footer">
@@ -23,6 +39,7 @@
           <li><a href="contact-us.html">Contact</a></li>
         </ul>
       </aside>
+<<<<<<< HEAD
       <aside class="widget widget_footer">
         <h4 class="widget-title">Bussiness</h4>
         <ul class="ps-list--link">
@@ -30,11 +47,15 @@
           <li><a href="checkout.html">Checkout</a></li>
         </ul>
       </aside>
+=======
+>>>>>>> bed6c03880be7a9bf9d930e2abb19ad8e1ecc22d
     </div>
-    
+
     <div class="ps-footer__copyright">
-      <p>© 2018 Martfury. All Rights Reserved</p>
-      <p><span>We Using Safe Payment For:</span><a href="#"><img src="img/payment-method/1.jpg" alt=""></a><a href="#"><img src="img/payment-method/2.jpg" alt=""></a><a href="#"><img src="img/payment-method/3.jpg" alt=""></a><a href="#"><img src="img/payment-method/4.jpg" alt=""></a><a href="#"><img src="img/payment-method/5.jpg" alt=""></a></p>
+      <p>© 2019 APV. All Rights Reserved</p>
+      <p><span>We Using Safe Payment For:</span>
+        <a href="#"><img src="img/payment-method/1.jpg" alt=""></a>
+      </p>
     </div>
   </div>
 </footer>

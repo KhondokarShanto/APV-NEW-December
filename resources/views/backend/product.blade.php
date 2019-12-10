@@ -6,18 +6,15 @@
 
 @section('content')
 <div class="card">
-
-<<<<<<< HEAD
   <h2>All Products</h2>
-=======
+
   @if(auth()->user()->type=='admin')
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
       Create Products
-    </button> -->
+    </button>
   @endif
 
-  </br></br> 
->>>>>>> bed6c03880be7a9bf9d930e2abb19ad8e1ecc22d
+  </br></br>
 
   <table class="table table-bordered" id="datatable">
     <thead>
@@ -25,6 +22,7 @@
         <th scope="col">Sl.</th>
         <th scope="col">Name</th>
         <th scope="col">Brand</th>
+        <th scope="col">Status</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
@@ -34,12 +32,13 @@
           <td>{{$product->id}}</td>
           <td>{{$product->name}}</td>
           <td>{{$product->brand}}</td>
+          <td>{{$product->status}}</td>
           <td>
-            <a href="{{ route('details.product',[$product->id])}}" class="btn btn-primary">
+            <a href="{{ route('details.product',[$product->id])}}"class="btn btn-success">
               Details
             </a>
             <b></b>
-            <a href="{{ route('delete.product',[$product->id])}}" class="btn btn-danger">
+            <a href="{{ route('delete.product',[$product->id])}}"class="btn btn-danger">
               Delete
             </a>
           </td>
@@ -47,8 +46,6 @@
       @endforeach
     </tbody>
   </table>
-<<<<<<< HEAD
-=======
 </div>
 
 
@@ -63,7 +60,7 @@
         </div>
 
         <div class="modal-body">
-          <form action="{{ route('store.product')}}" method="post" role="form" >
+          <form action="{{ route('store.product')}}" method="post" role="form" enctype="multipart/form-data" >
             @csrf
               <div class="form-group">
                 <label for="name">Name:</label>
@@ -81,6 +78,12 @@
               </div>
 
               <div class="form-group">
+                <label for="name">Picture:</label>
+                <input class="form-control" id="image" type="file" name="image"  />
+              </div>
+
+
+              <div class="form-group">
                 <label for="name">Quantity:</label>
                 <input class="form-control" id="quantity" type="text" name="quantity" placeholder="Quantity" />
               </div>
@@ -95,13 +98,20 @@
                 <select class="form-control" id="supplier" name="supplier" >
                   <option value="outCollection">Out Collection</option>
                   @foreach( $suppliers as $supplier)
-                  <option value="{{ $supplier->user_name}}">
+                  <option value="{{ $supplier->id}}">
                     {{ $supplier->user_name}}</option>
                   @endforeach
                 </select>
               </div>
->>>>>>> bed6c03880be7a9bf9d930e2abb19ad8e1ecc22d
 
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Create</button>
+              </div>
+          </form>
+        </div>
+     </div>
+  </div>
 </div>
 @endsection
 
